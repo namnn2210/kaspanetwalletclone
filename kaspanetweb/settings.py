@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1y$xh7ky#01vo6xr71@zc#)p9q&daemc!z0e3!au!k!i9!)a$n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*','127.0.0.1']
 
 
 # Application definition
@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'web'
 ]
 
 MIDDLEWARE = [
+    # 'csp.middleware.CSPMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -121,3 +123,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# CSP_DEFAULT_SRC = ["'none'"]
+# CSP_CONNECT_SRC = ["'self'", 'http://127.0.0.1:8000/']
+# CSP_STYLE_SRC = ["'self'"]
+# CSP_SCRIPT_SRC = ["'self'",'unsafe-inline']
+# CSP_IMG_SRC = ["'self'", 'data:']
