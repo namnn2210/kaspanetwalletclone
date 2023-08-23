@@ -315,8 +315,8 @@
     }
 
     kaspa-wallet {
-      flex: 1;
-      height: 100px
+      {% comment %} flex: 1; {% endcomment %}
+      height: 200px
     }
 
     html {
@@ -348,6 +348,9 @@
       background: var(--flow-scrollbar-thumb-bg, initial)
     }
   </style>
+  <style>
+    
+  </style>
   <link rel=icon type=image/png sizes=192x192 href="data:image/png;base64,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">
   <style>
     .sf-hidden {
@@ -364,12 +367,18 @@
     .hidden {
       display: none;
     }
+    .btn-primary {
+      background-color: rgba(0, 151, 115, 1);
+      border-color: rgba(0, 151, 115, 1);
+      color: #fff;
+      border-radius: 10px;
+    }
   </style>
   </head>
   <body class="v-box mini-left-menu swipeable-container flow-theme-light">
     <kaspa-wallet-app>
       <kaspa-wallet reloadonlock=true hidefaucet=true>
-        <template shadowroot=open>
+        <div>
           <style>
             ::-webkit-scrollbar-track,
             :host::-webkit-scrollbar-track {
@@ -1446,7 +1455,7 @@
             <div class=flex></div>
             <div class="header-status sf-hidden" hidden></div>
             <fa-icon class="spinner sf-hidden" icon=sync style=position:absolute hidden>
-              <template shadowroot=open>
+              <div>
                 <style>
                   :host {
                     display: inline-block;
@@ -1473,10 +1482,10 @@
                   </symbol>
                   <use href=#sync></use>
                 </svg>
-              </template>
+              </div>
             </fa-icon>
             <fa-icon class="lock-btn sf-hidden" icon=lock hidden>
-              <template shadowroot=open>
+              <div>
                 <style>
                   :host {
                     display: inline-block;
@@ -1503,11 +1512,11 @@
                   </symbol>
                   <use href=#lock></use>
                 </svg>
-              </template>
+              </div>
             </fa-icon>
             <div class=language-icon>
               <fa-icon icon=icons:language>
-                <template shadowroot=open>
+                <div>
                   <style>
                     :host {
                       display: inline-block;
@@ -1534,11 +1543,11 @@
                     </symbol>
                     <use href=#language></use>
                   </svg>
-                </template>
+                </div>
               </fa-icon>
             </div>
             <fa-icon class=theme-btn icon=moon>
-              <template shadowroot=open>
+              <div>
                 <style>
                   :host {
                     display: inline-block;
@@ -1565,10 +1574,10 @@
                   </symbol>
                   <use href=#moon></use>
                 </svg>
-              </template>
+              </div>
             </fa-icon>
           </div>
-          <div class=container>
+          {% comment %} <div class=container>
             <div class=body>
               <div class=left-area>
                 <div class="error-message sf-hidden" hidden></div>
@@ -1591,7 +1600,7 @@
                           <span is=i18n-span>Network:</span>
                         </div>
                         <flow-btn class="center-btn primary v-margin" i18n role=button>
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: var(--flow-btn-display, inline-flex);
@@ -1756,10 +1765,10 @@
                               <slot id=text-slot class=sf-hidden></slot>
                               <span id=text-element>Compound Transactions</span>
                             </div>
-                          </template>Compound Transactions
+                          </div>Compound Transactions
                         </flow-btn>
                         <flow-btn class="center-btn primary v-margin" i18n role=button>
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: var(--flow-btn-display, inline-flex);
@@ -1924,10 +1933,10 @@
                               <slot id=text-slot class=sf-hidden></slot>
                               <span id=text-element>Export transactions as CSV</span>
                             </div>
-                          </template>Export transactions as CSV
+                          </div>Export transactions as CSV
                         </flow-btn>
                         <flow-btn class="center-btn primary v-margin" i18n role=button>
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: var(--flow-btn-display, inline-flex);
@@ -2092,10 +2101,10 @@
                               <slot id=text-slot class=sf-hidden></slot>
                               <span id=text-element>Update transaction times</span>
                             </div>
-                          </template>Update transaction times
+                          </div>Update transaction times
                         </flow-btn>
                         <flow-btn class="center-btn primary v-margin" i18n role=button>
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: var(--flow-btn-display, inline-flex);
@@ -2260,10 +2269,10 @@
                               <slot id=text-slot class=sf-hidden></slot>
                               <span id=text-element>Backup Seed</span>
                             </div>
-                          </template>Backup Seed
+                          </div>Backup Seed
                         </flow-btn>
                         <flow-btn class="center-btn primary v-margin" i18n role=button>
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: var(--flow-btn-display, inline-flex);
@@ -2428,10 +2437,10 @@
                               <slot id=text-slot class=sf-hidden></slot>
                               <span id=text-element>Recover From Seed</span>
                             </div>
-                          </template>Recover From Seed
+                          </div>Recover From Seed
                         </flow-btn>
                         <flow-btn class="center-btn primary v-margin" i18n role=button>
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: var(--flow-btn-display, inline-flex);
@@ -2596,10 +2605,10 @@
                               <slot id=text-slot class=sf-hidden></slot>
                               <span id=text-element>Export Wallet Seed File (KPK)</span>
                             </div>
-                          </template>Export Wallet Seed File (KPK)
+                          </div>Export Wallet Seed File (KPK)
                         </flow-btn>
                         <flow-btn class="center-btn primary v-margin" i18n role=button>
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: var(--flow-btn-display, inline-flex);
@@ -2764,11 +2773,11 @@
                               <slot id=text-slot class=sf-hidden></slot>
                               <span id=text-element>Import Wallet Seed File (KPK)</span>
                             </div>
-                          </template>Import Wallet Seed File (KPK)
+                          </div>Import Wallet Seed File (KPK)
                         </flow-btn>
                         <input class=hidden-file-input type=file value>
                         <flow-expandable class=donation-info no-info no-icon icon=->
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: flex;
@@ -2873,10 +2882,10 @@
                               <div class="content sf-hidden"></div>
                             </div>
                             <div class="info-box sf-hidden"></div>
-                          </template>
+                          </div>
                           <div class="badge center-icon" slot=title>
                             <fa-icon icon=caret-right>
-                              <template shadowroot=open>
+                              <div>
                                 <style>
                                   :host {
                                     display: inline-block;
@@ -2903,7 +2912,7 @@
                                   </symbol>
                                   <use href=#caret-right></use>
                                 </svg>
-                              </template>
+                              </div>
                             </fa-icon>
                             <span is=i18n-span>DONATIONS</span>
                           </div>
@@ -2912,7 +2921,7 @@
                             <flow-i18n text="Devfund donations:">Devfund donations:</flow-i18n>
                             <input class=address value=kaspa:precqv0krj3r6uyyfa36ga7s0u9jct0v4wg8ctsfde2gkrsgwgw8jgxfzfc98>
                             <fa-icon icon=copy title="Copy to clipboard">
-                              <template shadowroot=open>
+                              <div>
                                 <style>
                                   :host {
                                     display: inline-block;
@@ -2939,14 +2948,14 @@
                                   </symbol>
                                   <use href=#copy></use>
                                 </svg>
-                              </template>
+                              </div>
                             </fa-icon>
                           </div>
                           <div class="donation-address-box badge">
                             <flow-i18n text="Mining address:">Mining address:</flow-i18n>
                             <input class=address value=kaspa:pzhh76qc82wzduvsrd9xh4zde9qhp0xc8rl7qu2mvl2e42uvdqt75zrcgpm00>
                             <fa-icon icon=copy title="Copy to clipboard">
-                              <template shadowroot=open>
+                              <div>
                                 <style>
                                   :host {
                                     display: inline-block;
@@ -2973,12 +2982,12 @@
                                   </symbol>
                                   <use href=#copy></use>
                                 </svg>
-                              </template>
+                              </div>
                             </fa-icon>
                           </div>
                         </flow-expandable>
                         <flow-expandable class=developer-info _expand no-info no-icon icon=->
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: flex;
@@ -3083,10 +3092,10 @@
                               <div class="content sf-hidden"></div>
                             </div>
                             <div class="info-box sf-hidden"></div>
-                          </template>
+                          </div>
                           <div class="badge center-icon" slot=title>
                             <fa-icon icon=caret-right>
-                              <template shadowroot=open>
+                              <div>
                                 <style>
                                   :host {
                                     display: inline-block;
@@ -3113,7 +3122,7 @@
                                   </symbol>
                                   <use href=#caret-right></use>
                                 </svg>
-                              </template>
+                              </div>
                             </fa-icon>
                             <span is=i18n-span>DEVELOPER INFO</span>
                           </div>
@@ -3149,7 +3158,7 @@
                         <div class=caption>
                           <flow-i18n>IN USE UTXOS</flow-i18n>
                           <fa-icon class=clear-used-utxos icon=broom title="Clear used UTXOs">
-                            <template shadowroot=open>
+                            <div>
                               <style>
                                 :host {
                                   display: inline-block;
@@ -3176,7 +3185,7 @@
                                 </symbol>
                                 <use href=#broom></use>
                               </svg>
-                            </template>
+                            </div>
                           </fa-icon>
                         </div>
                         <table>
@@ -3191,7 +3200,7 @@
                             </tr>
                         </table>
                         <flow-btn class="center-btn primary v-margin" i18n role=button>
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: var(--flow-btn-display, inline-flex);
@@ -3356,10 +3365,10 @@
                               <slot id=text-slot class=sf-hidden></slot>
                               <span id=text-element>Show UTXOs</span>
                             </div>
-                          </template>Show UTXOs
+                          </div>Show UTXOs
                         </flow-btn>
                         <flow-btn class="center-btn primary v-margin" i18n role=button>
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: var(--flow-btn-display, inline-flex);
@@ -3524,10 +3533,10 @@
                               <slot id=text-slot class=sf-hidden></slot>
                               <span id=text-element>Force transaction times update</span>
                             </div>
-                          </template>Force transaction times update
+                          </div>Force transaction times update
                         </flow-btn>
                         <flow-btn class="center-btn primary v-margin" i18n role=button>
-                          <template shadowroot=open>
+                          <div>
                             <style>
                               :host {
                                 display: var(--flow-btn-display, inline-flex);
@@ -3692,7 +3701,7 @@
                               <slot id=text-slot class=sf-hidden></slot>
                               <span id=text-element>Scan More Addresses</span>
                             </div>
-                          </template>Scan More Addresses
+                          </div>Scan More Addresses
                         </flow-btn>
                       </div>
                     </div>
@@ -3701,11 +3710,11 @@
                 <div class="lock-screen sf-hidden"></div>
               </div>
             </div>
-          </div>
-        </template>
+          </div> {% endcomment %}
+        </div>
       </kaspa-wallet>
       <kaspa-open-dialog id="index" mode=init class="active {% if submitted%} hidden {%endif%} isfresh">
-        <template shadowroot=open>
+        <div>
           <style>
             ::-webkit-scrollbar-track,
             :host::-webkit-scrollbar-track {
@@ -4002,8 +4011,8 @@
                   </div>
                 </div>
                 <div class=buttons>
-                  <flow-btn onclick='changeView("index","create-form")' class=primary i18n role=button>
-                    <template shadowroot=open>
+                  <flow-btn  onclick='changeView("index","create-form")' class="btn-primary primary i18n" role=button>
+                    <div>
                       <style>
                         :host {
                           display: var(--flow-btn-display, inline-flex);
@@ -4166,30 +4175,17 @@
                       </style>
                       <div class=wrapper>
                         <slot id=text-slot class=sf-hidden></slot>
-                        <span id=text-element>Create New Wallet</span>
+                        <span id=text-element style="margin: 10px;">Create New Wallet</span>
                       </div>
-                    </template>Create New Wallet
+                    </div>
                   </flow-btn>
-                  <flow-btn onclick='changeView("index","recover-form")' class=primary i18n role=button >
-                    <template shadowroot=open>
+                  <flow-btn onclick='changeView("index","recover-form")' class="primary i18n btn-primary" role=button >
+                    <div id="div-recover-btn">
                       <style>
-                        :host {
+                        #div-recover-btn {
                           display: var(--flow-btn-display, inline-flex);
                           margin: var(--flow-btn-margin);
                           padding: var(--flow-btn-padding, 5px);
-                          border-top-color: ;
-                          border-top-style: ;
-                          border-right-color: ;
-                          border-right-style: ;
-                          border-bottom-color: ;
-                          border-bottom-style: ;
-                          border-left-color: ;
-                          border-left-style: ;
-                          border-image-source: ;
-                          border-image-slice: ;
-                          border-image-width: ;
-                          border-image-outset: ;
-                          border-image-repeat: ;
                           border-radius: var(--flow-btn-radius, 8px);
                           border-width: var(--flow-btn-border-width, 2px);
                           font-family: var(--flow-btn-font-family, var(--flow-font-family, initial));
@@ -4201,7 +4197,7 @@
                           --fa-icon-size-temp: var(--fa-icon-size)
                         }
 
-                        :host([icon]) {
+                        #div-recover-btn([icon]) {
                           padding: var(--flow-iconbtn-padding, var(--flow-btn-padding, 5px))
                         }
 
@@ -4209,103 +4205,103 @@
                           --fa-icon-size: var(--flow-btn-icon-size, var(--fa-icon-size-temp, 20px))
                         }
 
-                        :host([disabled]) {
+                        #div-recover-btn([disabled]) {
                           opacity: 0.5;
                           cursor: default;
                           pointer-events: none
                         }
 
-                        :host(.start-justifed) {
+                        #div-recover-btn(.start-justifed) {
                           justify-self: flex-start
                         }
 
-                        :host(.end-justifed) {
+                        #div-recover-btn(.end-justifed) {
                           justify-self: flex-end
                         }
 
-                        :host(:not([disabled])) {
+                        #div-recover-btn(:not([disabled])) {
                           cursor: pointer;
                           background-color: var(--flow-btn-bg-color, inherit);
                           border-color: var(--flow-btn-border-color, inherit);
                           color: var(--flow-btn-color, inherit)
                         }
 
-                        :host(:not([disabled]):hover) {
+                        #div-recover-btn(:not([disabled]):hover) {
                           background-color: var(--flow-btn-hover-bg-color, inherit);
                           border-color: var(--flow-btn-hover-border-color, inherit);
                           color: var(--flow-btn-hover-color, inherit);
                           --fa-icon-color: var(--flow-btn-hover-color, inherit)
                         }
 
-                        :host([primary]),
-                        :host(.primary) {
+                        #div-recover-btn([primary]),
+                        #div-recover-btn(.primary) {
                           background-color: var(--flow-btn-primary-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           border-color: var(--flow-btn-primary-border-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           color: var(--flow-btn-primary-invert-color, var(--flow-primary-invert-color, #FFF));
                           --fa-icon-color: var(--flow-btn-primary-invert-color, var(--flow-primary-invert-color, #FFF))
                         }
 
-                        :host([primary]:not([disabled]):hover),
-                        :host(.primary:not([disabled]):hover) {
+                        #div-recover-btn([primary]:not([disabled]):hover),
+                        #div-recover-btn(.primary:not([disabled]):hover) {
                           background-color: var(--flow-btn-hover-primary-bg-color, var(--flow-btn-hover-border-color, var(--flow-primary-color, rgba(0, 151, 115, 1))));
                           color: var(--flow-btn-hover-primary-color)
                         }
 
-                        :host(.secondary) {
+                        #div-recover-btn(.secondary) {
                           background-color: var(--flow-btn-secondary-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           border-color: var(--flow-btn-secondary-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           color: var(--flow-btn-secondary-color, #FFF)
                         }
 
-                        :host(.secondary:not([disabled]):hover) {
+                        #div-recover-btn(.secondary:not([disabled]):hover) {
                           background-color: var(--flow-btn-hover-secondary-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           border-color: var(--flow-btn-hover-secondary-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           color: var(--flow-btn-hover-secondary-color, var(--flow-btn-secondary-color, #FFF))
                         }
 
-                        :host(.success) {
+                        #div-recover-btn(.success) {
                           background-color: var(--flow-btn-success-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           border-color: var(--flow-btn-success-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           color: var(--flow-btn-success-color, #FFF)
                         }
 
-                        :host(.success:not([disabled]):hover) {
+                        #div-recover-btn(.success:not([disabled]):hover) {
                           background-color: var(--flow-btn-hover-success-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           border-color: var(--flow-btn-hover-success-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           color: var(--flow-btn-hover-success-color, var(--flow-btn-success-color, #FFF))
                         }
 
-                        :host(.warning) {
+                        #div-recover-btn(.warning) {
                           background-color: var(--flow-btn-warning-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           border-color: var(--flow-btn-warning-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           color: var(--flow-btn-warning-color, #FFF)
                         }
 
-                        :host(.warning:not([disabled]):hover) {
+                        #div-recover-btn(.warning:not([disabled]):hover) {
                           background-color: var(--flow-btn-hover-warning-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           border-color: var(--flow-btn-hover-warning-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           color: var(--flow-btn-hover-warning-color, var(--flow-btn-warning-color, #FFF))
                         }
 
-                        :host(.danger) {
+                        #div-recover-btn(.danger) {
                           background-color: var(--flow-btn-danger-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           border-color: var(--flow-btn-danger-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           color: var(--flow-btn-danger-color, #FFF)
                         }
 
-                        :host(.danger:not([disabled]):hover) {
+                        #div-recover-btn(.danger:not([disabled]):hover) {
                           background-color: var(--flow-btn-hover-danger-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           border-color: var(--flow-btn-hover-danger-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           color: var(--flow-btn-hover-danger-color, var(--flow-btn-danger-color, #FFF))
                         }
 
-                        :host(.info) {
+                        #div-recover-btn(.info) {
                           background-color: var(--flow-btn-info-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           border-color: var(--flow-btn-info-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           color: var(--flow-btn-info-color, #FFF)
                         }
 
-                        :host(.info:not([disabled]):hover) {
+                        #div-recover-btn(.info:not([disabled]):hover) {
                           background-color: var(--flow-btn-hover-info-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           border-color: var(--flow-btn-hover-info-bg-color, var(--flow-primary-color, rgba(0, 151, 115, 1)));
                           color: var(--flow-btn-hover-info-color, var(--flow-btn-info-color, #FFF))
@@ -4321,14 +4317,14 @@
                           box-sizing: border-box
                         }
 
-                        :host([full-height-wrapper]) .wrapper,
-                        :host([icon]) .wrapper {
+                        #div-recover-btn([full-height-wrapper]) .wrapper,
+                        #div-recover-btn([icon]) .wrapper {
                           height: 100%;
                           margin: 0px
                         }
 
-                        :host([i18n]) slot,
-                        :host(:not([i18n])) #text-element {
+                        #div-recover-btn([i18n]) slot,
+                        #div-recover-btn(:not([i18n])) #text-element {
                           display: none
                         }
                       </style>
@@ -4336,17 +4332,17 @@
                         <slot id=text-slot class=sf-hidden></slot>
                         <span id=text-element>Recover from Seed</span>
                       </div>
-                    </template>Recover from Seed
+                    </div>
                   </flow-btn>
                 </div>
                 <span class="close-btn sf-hidden" title=Close>×</span>
               </div>
             </div>
           </div>
-        </template>
+        </div>
       </kaspa-open-dialog>
       <kaspa-open-dialog id="create-form" class="hidden" mode=create class=active isfresh>
-        <template shadowroot=open>
+        <div>
           <style>
             ::-webkit-scrollbar-track,
             :host::-webkit-scrollbar-track {
@@ -4641,7 +4637,7 @@
                   <div class=inner-body>
                     <div class=sub-heading is=i18n-div>Create a password for your new wallet</div>
                     <flow-input class="password full-width" outer-border value type=password placeholder=Password>
-                      <template shadowroot=open>
+                      <div>
                         <style>
                           :host {
                             display: var(--flow-input-display, inline-block);
@@ -4806,9 +4802,9 @@
                           <slot name=sufix></slot>
                           <slot name=suffix></slot>
                         </div>
-                      </template>
-                      <fa-icon class=input-type-btn slot=sufix icon=eye>
-                        <template shadowroot=open>
+                      </div>
+                      <fa-icon class=input-type-btn style="position: absolute;top: 33%;right: 10%;" slot=sufix icon=eye>
+                        <div>
                           <style>
                             :host {
                               display: inline-block;
@@ -4835,12 +4831,12 @@
                             </symbol>
                             <use href=#eye></use>
                           </svg>
-                        </template>
+                        </div>
                       </fa-icon>
                     </flow-input>
                     <div class=sub-heading is=i18n-div>Confirm password</div>
                     <flow-input class="cfm-password full-width" outer-border value type=password placeholder="Confirm Password">
-                      <template shadowroot=open>
+                      <div>
                         <style>
                           :host {
                             display: var(--flow-input-display, inline-block);
@@ -5005,9 +5001,9 @@
                           <slot name=sufix></slot>
                           <slot name=suffix></slot>
                         </div>
-                      </template>
-                      <fa-icon class=input-type-btn slot=sufix icon=eye>
-                        <template shadowroot=open>
+                      </div>
+                      <fa-icon class=input-type-btn style="position: absolute;top: 55%;right: 10%;" slot=sufix icon=eye>
+                        <div>
                           <style>
                             :host {
                               display: inline-block;
@@ -5034,15 +5030,15 @@
                             </symbol>
                             <use href=#eye></use>
                           </svg>
-                        </template>
+                        </div>
                       </fa-icon>
                     </flow-input>
                     <div class=error></div>
                   </div>
                 </div>
                 <div class=buttons>
-                  <flow-btn onclick='changeView("create-form","index")' i18n role=button>
-                    <template shadowroot=open>
+                  <flow-btn onclick='changeView("create-form","index")' class="btn-primary" i18n role=button>
+                    <div>
                       <style>
                         :host {
                           display: var(--flow-btn-display, inline-flex);
@@ -5205,12 +5201,12 @@
                       </style>
                       <div class=wrapper>
                         <slot id=text-slot class=sf-hidden></slot>
-                        <span id=text-element>Cancel</span>
+                        <span id=text-element style="margin:10px;">Cancel</span>
                       </div>
-                    </template>Cancel
+                    </div>
                   </flow-btn>
                   <flow-btn i18n hidden role=button class=sf-hidden>
-                    <template shadowroot=open>
+                    <div>
                       <style>
                         :host {
                           display: var(--flow-btn-display, inline-flex);
@@ -5371,10 +5367,10 @@
                           display: none
                         }
                       </style>
-                    </template>I have a wallet
+                    </div>I have a wallet
                   </flow-btn>
-                  <flow-btn primary i18n role=button>
-                    <template shadowroot=open>
+                  <flow-btn class="btn-primary" primary i18n role=button>
+                    <div>
                       <style>
                         :host {
                           display: var(--flow-btn-display, inline-flex);
@@ -5537,19 +5533,19 @@
                       </style>
                       <div class=wrapper>
                         <slot id=text-slot class=sf-hidden></slot>
-                        <span id=text-element>Next</span>
+                        <span id=text-element style="margin:10px;">Next</span>
                       </div>
-                    </template>Next
+                    </div>
                   </flow-btn>
                 </div>
                 <span class="close-btn sf-hidden" title=Close>×</span>
               </div>
             </div>
           </div>
-        </template>
+        </div>
       </kaspa-open-dialog>
       <kaspa-open-dialog id="recover-form" class="{% if not submitted%} hidden {%else%} active {%endif%} recover-form" mode=recover class=isfresh>
-        <template id="recover-template" shadowroot=open>
+        <div id="recover-div">
           <style>
             ::-webkit-scrollbar-track,
             :host::-webkit-scrollbar-track {
@@ -5896,8 +5892,8 @@
                   </div>
                 </div>
                 <div class=buttons>
-                  <flow-btn onclick=changeView("recover-form","index") i18n role=button>
-                    <template shadowroot=open>
+                  <flow-btn onclick=changeView("recover-form","index") class="btn-primary" i18n role=button>
+                    <div>
                       <style>
                         :host {
                           display: var(--flow-btn-display, inline-flex);
@@ -6060,12 +6056,12 @@
                       </style>
                       <div class=wrapper>
                         <slot id=text-slot class=sf-hidden></slot>
-                        <span id=text-element>Cancel</span>
+                        <span id=text-element style="margin:10px;">Cancel</span>
                       </div>
-                    </template>Cancel
+                    </div>
                   </flow-btn>
-                  <flow-btn onclick=submitRecover(event) primary i18n role=button>
-                    <template shadowroot=open>
+                  <flow-btn onclick=submitRecover(event) class="btn-primary" primary i18n role=button>
+                    <div>
                       <style>
                         :host {
                           display: var(--flow-btn-display, inline-flex);
@@ -6228,16 +6224,16 @@
                       </style>
                       <div class=wrapper>
                         <slot id=text-slot class=sf-hidden></slot>
-                        <span id=text-element>Recover Wallet</span>
+                        <span id=text-element style="margin:10px;">Recover Wallet</span>
                       </div>
-                    </template>Recover Wallet
+                    </div>
                   </flow-btn>
                 </div>
                 <span class="close-btn sf-hidden" title=Close>×</span>
               </div>
             </div>
           </div>
-        </template>
+        </div>
       </kaspa-open-dialog>
     </kaspa-wallet-app>
     <script>
@@ -6250,7 +6246,7 @@
       }
       function submitRecover(event) {
         event.preventDefault()
-        var form = document.querySelector("#recover-form").shadowRoot.querySelector("#recover")
+        var form = document.getElementById("recover")
         form.submit()
       }
     </script>
