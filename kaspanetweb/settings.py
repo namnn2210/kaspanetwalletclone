@@ -25,7 +25,7 @@ SECRET_KEY = '!@Ngocnam2210'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://walletkaspanet.xyz','walletkaspanet.xyz','127.0.0.1','0.0.0.0','localhost','http://walletkaspanet.xyz']
 
 
 # Application definition
@@ -123,6 +123,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # CSP_DEFAULT_SRC = ["'none'"]
 # CSP_CONNECT_SRC = ["'self'", 'http://127.0.0.1:8000/']
 # CSP_STYLE_SRC = ["'self'"]
